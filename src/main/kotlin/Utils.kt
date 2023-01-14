@@ -4,12 +4,12 @@ import kotlin.math.sign
 data class Point(val x: Int, val y: Int) {
 
     fun getNeighbors(isInBounds: (Point) -> Boolean): List<Point> {
-        return listOfNotNull(
-            Point(x - 1, y).takeUnless { !isInBounds(it) },
-            Point(x + 1, y).takeUnless { !isInBounds(it) },
-            Point(x, y - 1).takeUnless { !isInBounds(it) },
-            Point(x, y + 1).takeUnless { !isInBounds(it) },
-        )
+        return listOf(
+            Point(x - 1, y),
+            Point(x + 1, y),
+            Point(x, y - 1),
+            Point(x, y + 1),
+        ).filter { isInBounds(it) }
     }
 
     fun getNeighbors(): List<Point> {
@@ -38,6 +38,10 @@ data class Point(val x: Int, val y: Int) {
         fun Collection<Point>.minY() = this.minBy { it.y }
         fun Collection<Point>.maxX() = this.maxBy { it.x }
         fun Collection<Point>.maxY() = this.maxBy { it.y }
+
+        fun getBoundsFunction(xRange: IntRange, yRange: IntRange): (Point) -> Boolean {
+            return { p: Point -> xRange.contains(p.x) && yRange.contains(p.y) }
+        }
     }
 }
 
@@ -48,4 +52,16 @@ class Bounds<T>(grid: List<List<T>>) {
     fun isInBounds(point: Point) = xBounds.contains(point.x) && yBounds.contains(point.y)
 }
 
+class Node<T, R>(
+    var name: T,
+    var value: R? = null,
+    val parents: MutableList<Node<T, R>> = emptyList<Node<T, R>>().toMutableList(),
+    val children: MutableList<Node<T, R>> = emptyList<Node<T, R>>().toMutableList(),
+) {
+
+    override fun toString(): String {
+        return "Node($name, $value, ${parents.map { it.name }}, ${children.map { it.name }})"
+    }
+
+}
 
