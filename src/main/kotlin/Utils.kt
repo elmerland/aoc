@@ -33,6 +33,10 @@ data class Point(val x: Int, val y: Int) {
         return "($x, $y)"
     }
 
+    operator fun plus(other: Point) = Point(x + other.x, y + other.y)
+
+    operator fun times(magnitude: Int) = Point(x * magnitude, y * magnitude)
+
     companion object {
         fun Collection<Point>.minX() = this.minBy { it.x }
         fun Collection<Point>.minY() = this.minBy { it.y }
@@ -42,6 +46,11 @@ data class Point(val x: Int, val y: Int) {
         fun getBoundsFunction(xRange: IntRange, yRange: IntRange): (Point) -> Boolean {
             return { p: Point -> xRange.contains(p.x) && yRange.contains(p.y) }
         }
+
+        val LEFT = Point(-1, 0)
+        val RIGHT = Point(1, 0)
+        val UP = Point(0, 1)
+        val DOWN = Point(0, -1)
     }
 }
 
