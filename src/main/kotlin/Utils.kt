@@ -13,7 +13,7 @@ data class Point(val x: Int, val y: Int) {
     }
 
     fun getNeighbors(): List<Point> {
-        return listOfNotNull(
+        return listOf(
             Point(x - 1, y),
             Point(x + 1, y),
             Point(x, y - 1),
@@ -51,6 +51,24 @@ data class Point(val x: Int, val y: Int) {
         val RIGHT = Point(1, 0)
         val UP = Point(0, 1)
         val DOWN = Point(0, -1)
+    }
+}
+
+data class Point3D(val x: Int, val y: Int, val z: Int) {
+
+    fun getNeighbors(): List<Point3D> {
+        return listOf(
+            Point3D(x - 1, y, z),
+            Point3D(x + 1, y, z),
+            Point3D(x, y - 1, z),
+            Point3D(x, y + 1, z),
+            Point3D(x, y, z - 1),
+            Point3D(x, y, z + 1),
+        )
+    }
+
+    override fun toString(): String {
+        return "($x, $y, $z)"
     }
 }
 
