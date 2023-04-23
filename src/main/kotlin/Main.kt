@@ -6,5 +6,6 @@ fun main() {
 //    Y22D16().solve()
 //    Y22D17().solve()
 //    Y22D18().solve()
-    Y22D19().solve()
+//    Y22D19().solve()
+    Y22D20().solve()
 }
