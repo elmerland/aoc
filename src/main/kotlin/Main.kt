@@ -8,5 +8,9 @@ fun main() {
 //    Y22D18().solve()
 //    Y22D19().solve()
 //    Y22D20().solve()
-    Y22D21().solve()
+//    Y22D21().solve()
+    Y22D22().solve()
+//    Y22D23().solve()
+//    Y22D24().solve()
+//    Y22D25().solve()
 }
