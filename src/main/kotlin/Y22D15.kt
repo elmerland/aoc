@@ -1,9 +1,9 @@
 import Point.Companion.maxX
 import Point.Companion.minX
 
-class Y22D15 : Puzzle(22, 15) {
+class Y22D15(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
-        val points = input.map { line ->
+        val points = input().map { line ->
             val (sensorRaw, beaconRaw) = line.split(": ")
             val sensorPoint = sensorRaw
                 .removePrefix("Sensor at x=")
@@ -51,7 +51,7 @@ class Y22D15 : Puzzle(22, 15) {
     }
 
     override fun part2(): String {
-        val points = input.map { line ->
+        val points = input().map { line ->
             val (sensorRaw, beaconRaw) = line.split(": ")
             val sensorPoint = sensorRaw
                 .removePrefix("Sensor at x=")

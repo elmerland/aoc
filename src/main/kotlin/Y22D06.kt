@@ -1,4 +1,4 @@
-class Y22D0 : Puzzle(22, 0) {
+class Y22D06(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         TODO("Not yet implemented")
     }

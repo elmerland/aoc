@@ -1,6 +1,6 @@
 import kotlin.math.ceil
 
-class Y22D19 : Puzzle(22, 19) {
+class Y22D19(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
 
     override fun part1(): String {
         val re = Regex("^Blueprint (\\d+): " +
@@ -8,7 +8,7 @@ class Y22D19 : Puzzle(22, 19) {
                 "Each clay robot costs (\\d+) ore. " +
                 "Each obsidian robot costs (\\d+) ore and (\\d+) clay. " +
                 "Each geode robot costs (\\d+) ore and (\\d+) obsidian.\$")
-        val blueprints = input.map {
+        val blueprints = input().map {
             val (
                 bpId,
                 oreRobot,
@@ -36,7 +36,7 @@ class Y22D19 : Puzzle(22, 19) {
                 "Each clay robot costs (\\d+) ore. " +
                 "Each obsidian robot costs (\\d+) ore and (\\d+) clay. " +
                 "Each geode robot costs (\\d+) ore and (\\d+) obsidian.\$")
-        val blueprints = input.map {
+        val blueprints = input().map {
             val (
                 bpId,
                 oreRobot,

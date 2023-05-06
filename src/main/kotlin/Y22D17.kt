@@ -5,9 +5,9 @@ import Point.Companion.minY
 import Y22D17.Rock.Companion.move
 import Y22D17.Rock.Companion.toPoints
 
-class Y22D17 : Puzzle(22, 17) {
+class Y22D17(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
-        val moveQueue = input[0].map {
+        val moveQueue = input()[0].map {
             when (it) {
                 '>' -> Move.RIGHT
                 '<' -> Move.LEFT
@@ -109,7 +109,7 @@ class Y22D17 : Puzzle(22, 17) {
     }
 
     override fun part2(): String {
-        val moveQueue = input[0].map {
+        val moveQueue = input()[0].map {
             when (it) {
                 '>' -> Move.RIGHT
                 '<' -> Move.LEFT

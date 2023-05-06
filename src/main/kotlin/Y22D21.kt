@@ -1,4 +1,4 @@
-class Y22D21 : Puzzle(22, 21) {
+class Y22D21(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
 
     private val monkeyDescriptionRegex = Regex("^(\\w+): (.+)")
     val mathOperationRegex = Regex("(\\w+) (.) (\\w+)")
@@ -68,7 +68,7 @@ class Y22D21 : Puzzle(22, 21) {
     }
 
     private fun parseMonkeys(): List<Monkey> {
-        return input.map { line ->
+        return input().map { line ->
             val (monkeyName, action) = monkeyDescriptionRegex.find(line)!!.destructured
             Monkey(
                 monkeyName,

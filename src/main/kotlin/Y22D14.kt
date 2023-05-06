@@ -1,9 +1,9 @@
 import Y22D14.Coord.Companion.toCoord
 import kotlin.math.sign
 
-class Y22D14 : Puzzle(22, 14) {
+class Y22D14(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
-        val lines = input.map { line ->
+        val lines = input().map { line ->
             line
                 .split(" -> ")
                 .map { coordinate ->
@@ -87,7 +87,7 @@ class Y22D14 : Puzzle(22, 14) {
     }
 
     override fun part2(): String {
-        val lines = input.map { line ->
+        val lines = input().map { line ->
             line
                 .split(" -> ")
                 .map { coordinate ->

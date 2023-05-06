@@ -1,13 +1,13 @@
-class Y22D20 : Puzzle(22, 20) {
+class Y22D20(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
-        val nums = input.mapIndexed { index, s -> P(index, s.toLong()) }.toMutableList()
+        val nums = input().mapIndexed { index, s -> P(index, s.toLong()) }.toMutableList()
         val result = nums.decrypt().getCoordinate()
         return result.toString()
     }
 
     override fun part2(): String {
         val decryptionKey = 811589153L
-        val nums = input.mapIndexed { index, s -> P(index, s.toLong() * decryptionKey) }.toMutableList()
+        val nums = input().mapIndexed { index, s -> P(index, s.toLong() * decryptionKey) }.toMutableList()
         repeat(10) { nums.decrypt() }
         val result = nums.getCoordinate()
         return result.toString()

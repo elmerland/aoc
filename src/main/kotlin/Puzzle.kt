@@ -1,23 +1,29 @@
 import java.io.File
 
-abstract class Puzzle(private val year: Int, private val day: Int) {
+abstract class Puzzle(val name: String, val inputFileName: String, val testInputFileName: String) {
 
-    val input = File("src/main/kotlin/input/input${year}d$day.txt").bufferedReader().readLines()
+    var useTestInput: Boolean = true
+    val input = { File(if (useTestInput) testInputFileName else inputFileName).bufferedReader().readLines() }
 
     abstract fun part1(): String
     abstract fun part2(): String
 
-    fun <T> parseInput(transform: (String) -> T): List<T> = input.map { transform(it) }
-
     fun solve() {
-        listOf(1 to ::part1, 2 to ::part2).forEach { (index, func) ->
-            val result = try {
-                func()
-            } catch (err: NotImplementedError) {
-                "not implemented"
+        listOf(true, false).forEach { useTestInput ->
+            this.useTestInput = useTestInput
+
+            println("# Running $name with ${"TEST".takeIf { useTestInput } ?: "REAL"} input")
+            listOf(1 to ::part1, 2 to ::part2).forEach { (index, func) ->
+                val result = try {
+                    func()
+                } catch (err: NotImplementedError) {
+                    "not implemented"
+                }
+
+                println("\tpart $index = $result")
             }
 
-            println("$year-$day part $index = $result")
+            println()
         }
     }
 }

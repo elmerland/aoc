@@ -1,8 +1,8 @@
-class Y22D12 : Puzzle(22, 12) {
+class Y22D12(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         var startCoord: Coord? = null
         var endCoord: Coord? = null
-        val grid = input.mapIndexed { x, line ->
+        val grid = input().mapIndexed { x, line ->
             line.mapIndexed { y, char ->
                 when (char) {
                     'S' -> {
@@ -40,7 +40,7 @@ class Y22D12 : Puzzle(22, 12) {
 
     override fun part2(): String {
         var endCoord: Coord? = null
-        val grid = input.mapIndexed { x, line ->
+        val grid = input().mapIndexed { x, line ->
             line.mapIndexed { y, char ->
                 when (char) {
                     'S' -> {

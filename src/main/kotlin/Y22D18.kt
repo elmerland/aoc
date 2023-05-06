@@ -1,6 +1,6 @@
-class Y22D18 : Puzzle(22, 18) {
+class Y22D18(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
-        val cubes = parseInput { it.split(",").map { num -> num.toInt() } }
+        val cubes = input().map { it.split(",").map { num -> num.toInt() } }
             .map { Point3D(it[0], it[1], it[2]) }
             .toSet()
 
@@ -14,7 +14,7 @@ class Y22D18 : Puzzle(22, 18) {
     }
 
     override fun part2(): String {
-        val cubes = parseInput { it.split(",").map { num -> num.toInt() } }
+        val cubes = input().map { it.split(",").map { num -> num.toInt() } }
             .map { Point3D(it[0], it[1], it[2]) }
             .toSet()
 

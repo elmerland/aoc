@@ -1,7 +1,7 @@
 import Y22D22.Dir.RIGHT
 import java.lang.IllegalStateException
 
-class Y22D22 : Puzzle(22, 22) {
+class Y22D22(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         val maze = parseMaze()
 
@@ -23,13 +23,13 @@ class Y22D22 : Puzzle(22, 22) {
     }
 
     private fun parseMaze(): Maze {
-        val mazeLines = input.subList(0, input.size - 2)
+        val mazeLines = input().subList(0, input().size - 2)
 
         val maxCol = mazeLines.maxOf { it.length }
         val mazeInput = mazeLines.map { it.padEnd(maxCol, ' ').toCharArray().map(Char::toString) }
         val startingRow =  mazeInput.indexOfFirst { it.contains(".") }
         val startingCol = mazeInput[startingRow].indexOfFirst { it == "." }
-        val path = input.last().replace(Regex("[RL]")) { "|${it.value}|" }.split("|")
+        val path = input().last().replace(Regex("[RL]")) { "|${it.value}|" }.split("|")
 //        println(mazeInput.map { it.map { if (it == " ") "_" else it } }.joinToString("\n") {it.joinToString("") })
 //        println(mazeInput.size to mazeInput[0].size)
 //        println("$startingRow, $startingCol")

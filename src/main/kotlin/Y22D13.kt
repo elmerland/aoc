@@ -2,9 +2,9 @@ import Y22D13.PacketItem.Companion.areInOrder
 import Y22D13.PacketItem.PacketList
 import Y22D13.PacketItem.PacketNum
 
-class Y22D13 : Puzzle(22, 13) {
+class Y22D13(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
-        val packets = input.chunked(3).map { it[0].toPacket() to it[1].toPacket() }
+        val packets = input().chunked(3).map { it[0].toPacket() to it[1].toPacket() }
 
         val result = packets
             .map { (left, right) -> areInOrder(left, right) }
@@ -17,7 +17,7 @@ class Y22D13 : Puzzle(22, 13) {
     override fun part2(): String {
         val dividerPackets = listOf("[[2]]".toPacket(), "[[6]]".toPacket())
         val packets =
-            input.filter { it.isNotBlank() }.map { it.toPacket() } +
+            input().filter { it.isNotBlank() }.map { it.toPacket() } +
                     dividerPackets
 
         val sortedPackets = packets.sortedWith { left, right ->

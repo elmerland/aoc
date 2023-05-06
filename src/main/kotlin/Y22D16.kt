@@ -1,7 +1,7 @@
-class Y22D16 : Puzzle(22, 16) {
+class Y22D16(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         val re = Regex("^Valve (\\w{2}) has flow rate=(\\d+); tunnels? leads? to valves? (.+)\$")
-        val data = input.map { line ->
+        val data = input().map { line ->
             val (valve, flowRate, valves) = re.find(line)!!.destructured
             Triple(valve, flowRate.toInt(), valves.split(", "))
         }
@@ -50,7 +50,7 @@ class Y22D16 : Puzzle(22, 16) {
 
     override fun part2(): String {
         val re = Regex("^Valve (\\w{2}) has flow rate=(\\d+); tunnels? leads? to valves? (.+)\$")
-        val data = input.map { line ->
+        val data = input().map { line ->
             val (valve, flowRate, valves) = re.find(line)!!.destructured
             Triple(valve, flowRate.toInt(), valves.split(", "))
         }
