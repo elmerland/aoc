@@ -1,7 +1,9 @@
+import puzzles.*
+
 fun main() {
     val inputPrefix = "src/main/kotlin/input/"
-    Y22D01("Y22D01", "$inputPrefix/22d01.txt", "$inputPrefix/22d01test.txt").solve()
-//    Y22D02("Y22D02", "$inputPrefix/22d02.txt", "$inputPrefix/22d02test.txt").solve()
+//    Y22D01("puzzles.Y22D01", "$inputPrefix/22d01.txt", "$inputPrefix/22d01test.txt").solve()
+    Y22D02("Y22D02", "$inputPrefix/22d02.txt", "$inputPrefix/22d02test.txt").solve()
 //    Y22D03("Y22D03", "$inputPrefix/22d03.txt", "$inputPrefix/22d03test.txt").solve()
 //    Y22D04("Y22D04", "$inputPrefix/22d04.txt", "$inputPrefix/22d04test.txt").solve()
 //    Y22D05("Y22D05", "$inputPrefix/22d05.txt", "$inputPrefix/22d05test.txt").solve()

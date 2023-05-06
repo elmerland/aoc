@@ -1,3 +1,6 @@
+package puzzles
+
+import Puzzle
 import kotlin.math.ceil
 
 class Y22D19(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {

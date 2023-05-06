@@ -1,4 +1,7 @@
-import Y22D14.Coord.Companion.toCoord
+package puzzles
+
+import Puzzle
+import puzzles.Y22D14.Coord.Companion.toCoord
 import kotlin.math.sign
 
 class Y22D14(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {

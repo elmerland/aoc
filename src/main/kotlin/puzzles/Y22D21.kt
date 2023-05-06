@@ -1,3 +1,7 @@
+package puzzles
+
+import Puzzle
+
 class Y22D21(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
 
     private val monkeyDescriptionRegex = Regex("^(\\w+): (.+)")

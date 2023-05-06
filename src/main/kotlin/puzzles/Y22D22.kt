@@ -1,4 +1,7 @@
-import Y22D22.Dir.RIGHT
+package puzzles
+
+import Puzzle
+import puzzles.Y22D22.Dir.RIGHT
 import java.lang.IllegalStateException
 
 class Y22D22(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
@@ -111,10 +114,10 @@ class Y22D22(name: String, input: String, testInput: String) : Puzzle(name, inpu
 
 }
 
-//fun Pair<Int, Int>.move(dir: Y22D22.Dir, rowBound: Int, colBound: Int) : Pair<Int, Int> {
+//fun Pair<Int, Int>.move(dir: puzzles.Y22D22.Dir, rowBound: Int, colBound: Int) : Pair<Int, Int> {
 //    return (first + dir.row).mod(rowBound) to (second + dir.col).mod(colBound)
 //}
 
-//private fun <A, B> Pair<A, B>.move(dir: Y22D22.Dir) {
+//private fun <A, B> Pair<A, B>.move(dir: puzzles.Y22D22.Dir) {
 //
 //}

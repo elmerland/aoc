@@ -1,3 +1,7 @@
+package puzzles
+
+import Puzzle
+
 class Y22D20(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         val nums = input().mapIndexed { index, s -> P(index, s.toLong()) }.toMutableList()

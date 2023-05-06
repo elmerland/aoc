@@ -1,6 +1,9 @@
-import Y22D13.PacketItem.Companion.areInOrder
-import Y22D13.PacketItem.PacketList
-import Y22D13.PacketItem.PacketNum
+package puzzles
+
+import Puzzle
+import puzzles.Y22D13.PacketItem.Companion.areInOrder
+import puzzles.Y22D13.PacketItem.PacketList
+import puzzles.Y22D13.PacketItem.PacketNum
 
 class Y22D13(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {

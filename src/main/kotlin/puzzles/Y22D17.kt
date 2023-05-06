@@ -1,9 +1,13 @@
+package puzzles
+
+import Point
 import Point.Companion.maxX
 import Point.Companion.maxY
 import Point.Companion.minX
 import Point.Companion.minY
-import Y22D17.Rock.Companion.move
-import Y22D17.Rock.Companion.toPoints
+import Puzzle
+import puzzles.Y22D17.Rock.Companion.move
+import puzzles.Y22D17.Rock.Companion.toPoints
 
 class Y22D17(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {

@@ -1,3 +1,7 @@
+package puzzles
+
+import Puzzle
+
 class Y22D16(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         val re = Regex("^Valve (\\w{2}) has flow rate=(\\d+); tunnels? leads? to valves? (.+)\$")

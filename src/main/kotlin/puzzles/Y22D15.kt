@@ -1,5 +1,9 @@
+package puzzles
+
+import Point
 import Point.Companion.maxX
 import Point.Companion.minX
+import Puzzle
 
 class Y22D15(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
@@ -95,7 +99,7 @@ class Y22D15(name: String, input: String, testInput: String) : Puzzle(name, inpu
 
         val candidates = aCoeff.map { a ->
             bCoeff.map { b ->
-                Point((b-a)/2, (b+a)/2)
+                Point((b - a) / 2, (b + a) / 2)
             }
         }.flatten().toSet()
 

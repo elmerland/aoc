@@ -1,3 +1,8 @@
+package puzzles
+
+import Point3D
+import Puzzle
+
 class Y22D18(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         val cubes = input().map { it.split(",").map { num -> num.toInt() } }

@@ -1,3 +1,7 @@
+package puzzles
+
+import Puzzle
+
 class Y22D12(name: String, input: String, testInput: String) : Puzzle(name, input, testInput) {
     override fun part1(): String {
         var startCoord: Coord? = null
